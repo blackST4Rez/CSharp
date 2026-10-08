@@ -130,6 +130,12 @@ namespace Basics
 
             //             */
 
+            //  /* Ternary Operator */
+
+            //  int age = 20;
+            //  string category = age >= 18 ? "Adult" : "Minor";
+            //  Console.WriteLine(category);   // Adult
+
             ///* Value Type Assignment */
 
             //int p = 10;
@@ -148,16 +154,27 @@ namespace Basics
             //Console.WriteLine(a[0]);   // 99
             //Console.WriteLine(b[0]);   //
 
-            /* Method Parameters */
+            ///* Method Parameters */
 
-            void Double(int x)
-            {
-                x = x * 2;
-            }
+            //void Double(int x)
+            //{
+            //    x = x * 2;
+            //}
 
-            int num = 5;
-            Double(num);
-            Console.WriteLine(num);   // 5  ← unchanged!
+            //int num = 5;
+            //Double(num);
+            //Console.WriteLine(num);   // 5  ← unchanged!
+
+            ///* Refence Type Parameters */
+
+            //void AddOne(List<int> list)
+            //{
+            //    list.Add(99);   // modifies the SAME list
+            //}
+
+            //var numbers = new List<int> { 1, 2, 3 };
+            //AddOne(numbers);
+            //Console.WriteLine(numbers.Count);   // 4  ← changed!
 
         }
     }
