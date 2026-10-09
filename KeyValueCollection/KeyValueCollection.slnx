@@ -2,5 +2,5 @@
   <Folder Name="/Solution Items/">
     <File Path=".gitignore" />
   </Folder>
-  <Project Path="KeyValueCollection/KeyValueCollection.csproj" />
+  <Project Path="KeyValueCollection/KeyValueCollection.csproj" Id="9825bc43-fffa-4c68-b6d4-16db49a354c6" />
 </Solution>
