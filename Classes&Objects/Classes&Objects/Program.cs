@@ -30,6 +30,54 @@ class User
     }
 }
 
+class BankAccount
+{
+    public string Owner { get; set; }
+    public decimal Balance { get; set; }
+
+    public BankAccount( string owner_name, decimal owner_deposit)
+    {
+        Owner = owner_name;
+        Balance = owner_deposit;
+    }
+
+    public void Deposit(decimal value)
+    {
+        if(value <= 0)
+        {
+            Console.WriteLine($"The deposit must be at least Rs. 100.");
+            return;
+        }
+
+        Balance += value;
+        Console.WriteLine($"{value} has been deposited from {Owner}. Your new balance is {Balance}");
+    }
+
+    public void Withdraw(decimal value)
+    {
+        if(value <= 0)
+        {
+            Console.WriteLine($"Cannot withdraw money less than Rs.100");
+            return;
+        }
+
+        if(value > Balance)
+        {
+            Console.WriteLine($"Cannot withdraw money more than your current balance.");
+        }
+
+        Balance -= value;
+        Console.WriteLine($"Rs.{value} has been withdrawn from your account. Your current balance is Rs.{Balance}.");
+    }
+
+    public void PrintBalance()
+    {
+        Console.WriteLine($"{Owner}, your account has balance of {Balance}.");
+    }
+
+
+}
+
 class Program
 {
     static void Main()
@@ -52,6 +100,15 @@ class Program
 
             Max.Details();
             Axl.Details();
+        }
+
+        {
+            var Ram = new BankAccount("Ram", 249123.2398m);
+
+            Ram.Deposit(500m);
+            Ram.Withdraw(1000m);
+            Ram.PrintBalance();
+
         }
     }
 }
