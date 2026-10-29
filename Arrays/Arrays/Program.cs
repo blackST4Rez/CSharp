@@ -91,7 +91,7 @@ namespace Arrays
             {
                 /* LINQ for powerful array operations */
 
-                    /* LINQ was used at the top already */
+                    /* LINQ import  was used at the top already */
 
                 int[] nums = { 3, 1, 4, 1, 5 };
 
@@ -108,6 +108,17 @@ namespace Arrays
 
             {
                 /* Multi-Dimensional Array */
+
+                /*
+                        col 0   col 1   col 2
+                      ┌───────┬───────┬───────┐
+                row 0 │   1   │   2   │   3   │
+                      ├───────┼───────┼───────┤
+                row 1 │   4   │   5   │   6   │
+                      ├───────┼───────┼───────┤
+                row 2 │   7   │   8   │   9   │
+                      └───────┴───────┴───────┘
+                 */
 
                 int[,] grid = {
                     { 1, 2, 3 },
