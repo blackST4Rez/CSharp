@@ -68,7 +68,7 @@ namespace Practice
                 Console.Write("How many times you wanna this ? ");
                 int count = Convert.ToInt32(Console.ReadLine());
 
-                if(count <= 0)
+                if (count <= 0)
                 {
                     Console.WriteLine("You really think you can count below 0 dumahh ?");
                 }
@@ -108,13 +108,126 @@ namespace Practice
                     Console.Write("Word ? ");
                     string word = Console.ReadLine();
 
-                    for(int i = 0; i < word.Length; i++)
+                    for (int i = 0; i < word.Length; i++)
                     {
                         Console.Write(word[i]);
                         Thread.Sleep(1000);
                     }
                 }
 
+                {
+                    for (int i = 0; i < 15; i++)
+                    {
+                        if (i % 3 == 0 && i % 5 == 0)
+                        {
+                            Console.WriteLine("FizzBuzz");
+                        }
+                        else if (i % 3 == 0)
+                        {
+                            Console.WriteLine("Fizz");
+                        }
+                        else if (i % 5 == 0)
+                        {
+                            Console.WriteLine("Buzz");
+                        }
+                        else
+                        {
+                            Console.WriteLine(i);
+                        }
+                    }
+
+                }
+
+                {
+                    string firstName = "Raka";
+                    string lastName = "Maharjan";
+                    int age = 20;
+
+                    Console.WriteLine("" + firstName + " " + lastName + " is " + age + " years old", firstName, lastName, age);
+                    Console.WriteLine("{0} {1} is {2} years old", firstName, lastName, age); //Composite Format
+
+                    string test = string.Concat("firstName, lastName is age years old.");
+                    Console.WriteLine(test);
+                }
+
+                {
+                    Console.Write("Please enter a message : ");
+                    string message = Console.ReadLine();
+
+                    for (int i = message.Length; i <= 0; i--)
+                    {
+                        Console.Write(message[i]);
+                        Thread.Sleep(100);
+                    }
+
+                }
+
+                {
+                    Console.Write("Please give a message : ");
+                    string message = Console.ReadLine();
+
+                    for (int i = message.Length - 1; i >= 0; i--)
+                    {
+                        Console.WriteLine($"The reverse for the user given message is" + message[i]);
+                    }
+                }
+
+                {
+                    int[] numbers = new int[3];
+
+                    Console.Write("Numbre One ? ");
+                    numbers[0] = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Numbre Two ? ");
+                    numbers[1] = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Numbre Three ? ");
+                    numbers[2] = Convert.ToInt32(Console.ReadLine());
+
+
+                    for (int i = 0; i < numbers.Length; i++)
+                    {
+                        Console.Write(numbers[i]);
+                    }
+
+                    {
+                        int[] numbers = new int[5];
+
+                        for (int i = 0; i < numbers.Length; i++)
+                        {
+                            Console.Write("Numbre ? ");
+                            numbers[i] = Convert.ToInt32(Console.ReadLine());
+                        }
+
+                        foreach( int n in numbers ){
+                            Console.WriteLine(n);
+                        }
+                    }
+
+                    {
+                        int[] numbers = new int[10];
+
+                        for (int i = 0; i < numbers.Length; i++)
+                        {
+                            Console.WriteLine($"Enter a number: ");
+                            numbers[i] = Convert.ToInt32(Console.ReadLine());
+                        }
+
+                        foreach (int num in numbers)
+                        {
+                            Console.WriteLine($"The sorted array is {num}.");
+
+                            if(num % 2 == 0)
+                            {
+                                Console.WriteLine(num);
+                            }
+                            else
+                            {
+                                return;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
