@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace Practice
@@ -20,13 +21,9 @@ namespace Practice
                 int userAnswer = Convert.ToInt32(Console.ReadLine());
 
                 if (userAnswer == sum)
-                {
                     Console.WriteLine("Your answer is correct!");
-                }
                 else
-                {
                     Console.WriteLine($"Not quite! The correct answer is {sum}.");
-                }
             }
 
             {
@@ -35,30 +32,14 @@ namespace Practice
 
                 switch (day)
                 {
-                    case 1:
-                        Console.WriteLine("Sunday");
-                        break;
-                    case 2:
-                        Console.WriteLine("Monday");
-                        break;
-                    case 3:
-                        Console.WriteLine("Tuesday");
-                        break;
-                    case 4:
-                        Console.WriteLine("Wednesday");
-                        break;
-                    case 5:
-                        Console.WriteLine("Thursday");
-                        break;
-                    case 6:
-                        Console.WriteLine("Friday");
-                        break;
-                    case 7:
-                        Console.WriteLine("Saturday");
-                        break;
-                    default:
-                        Console.WriteLine("Invalid day. Please enter 1-7.");
-                        break;
+                    case 1: Console.WriteLine("Sunday"); break;
+                    case 2: Console.WriteLine("Monday"); break;
+                    case 3: Console.WriteLine("Tuesday"); break;
+                    case 4: Console.WriteLine("Wednesday"); break;
+                    case 5: Console.WriteLine("Thursday"); break;
+                    case 6: Console.WriteLine("Friday"); break;
+                    case 7: Console.WriteLine("Saturday"); break;
+                    default: Console.WriteLine("Invalid day. Please enter 1-7."); break;
                 }
             }
 
@@ -69,165 +50,196 @@ namespace Practice
                 int count = Convert.ToInt32(Console.ReadLine());
 
                 if (count <= 0)
-                {
                     Console.WriteLine("You really think you can count below 0 dumahh ?");
-                }
                 else
-                {
                     for (int i = 0; i < count; i++)
-                    {
                         Console.WriteLine(stand);
-                    }
-                }
+            }
 
+            {
+                Console.Write("Number ? ");
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out int parsed))
+                    Console.WriteLine($"Success: {parsed}");
+                else
+                    Console.WriteLine("Not a valid number");
+            }
+
+            {
+                Console.Write("Word ? ");
+                string word = Console.ReadLine();
+
+                for (int i = 0; i < word.Length; i++)
                 {
-                    //Console.Write("Numbre ? ");
-                    //string testNum = Console.ReadLine();
-                    //int num = Convert.ToInt32(Console.ReadLine());
-
-                    //int.TryParse(testNum, out num);
-
-                    //Console.WriteLine(num);
+                    Console.Write(word[i]);
+                    Thread.Sleep(1000);
                 }
+                Console.WriteLine();
+            }
 
+            {
+                for (int i = 0; i < 15; i++)
                 {
-                    Console.Write("Numbre ? ");
-                    string input = Console.ReadLine();
-
-                    if (int.TryParse(input, out int parsed))
-                    {
-                        Console.WriteLine($"Success: {parsed}");
-                    }
+                    if (i % 3 == 0 && i % 5 == 0)
+                        Console.WriteLine("FizzBuzz");
+                    else if (i % 3 == 0)
+                        Console.WriteLine("Fizz");
+                    else if (i % 5 == 0)
+                        Console.WriteLine("Buzz");
                     else
-                    {
-                        Console.WriteLine("Not a valid number");
-                    }
+                        Console.WriteLine(i);
                 }
+            }
 
+            {
+                string firstName = "Raka";
+                string lastName = "Maharjan";
+                int age = 20;
+
+                Console.WriteLine($"{firstName} {lastName} is {age} years old");
+                Console.WriteLine("{0} {1} is {2} years old", firstName, lastName, age);
+                Console.WriteLine(string.Concat(firstName, " ", lastName, " is ", age, " years old."));
+            }
+
+            {
+                Console.Write("Please enter a message : ");
+                string message = Console.ReadLine();
+
+                for (int i = message.Length - 1; i >= 0; i--)
                 {
-                    Console.Write("Word ? ");
-                    string word = Console.ReadLine();
-
-                    for (int i = 0; i < word.Length; i++)
-                    {
-                        Console.Write(word[i]);
-                        Thread.Sleep(1000);
-                    }
+                    Console.Write(message[i]);
+                    Thread.Sleep(100);
                 }
+                Console.WriteLine();
+            }
 
+            {
+                Console.Write("Please give a message : ");
+                string message = Console.ReadLine();
+
+                Console.Write("The reverse for the user given message is: ");
+                for (int i = message.Length - 1; i >= 0; i--)
                 {
-                    for (int i = 0; i < 15; i++)
-                    {
-                        if (i % 3 == 0 && i % 5 == 0)
-                        {
-                            Console.WriteLine("FizzBuzz");
-                        }
-                        else if (i % 3 == 0)
-                        {
-                            Console.WriteLine("Fizz");
-                        }
-                        else if (i % 5 == 0)
-                        {
-                            Console.WriteLine("Buzz");
-                        }
-                        else
-                        {
-                            Console.WriteLine(i);
-                        }
-                    }
-
+                    Console.Write(message[i]);
                 }
+                Console.WriteLine();
+            }
 
+            {
+                int[] numbers = new int[3];
+
+                Console.Write("Number One ? ");
+                numbers[0] = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Number Two ? ");
+                numbers[1] = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Number Three ? ");
+                numbers[2] = Convert.ToInt32(Console.ReadLine());
+
+                for (int i = 0; i < numbers.Length; i++)
+                    Console.Write(numbers[i] + " ");
+                Console.WriteLine();
+            }
+
+            {
+                int[] numbers = new int[5];
+
+                for (int i = 0; i < numbers.Length; i++)
                 {
-                    string firstName = "Raka";
-                    string lastName = "Maharjan";
-                    int age = 20;
-
-                    Console.WriteLine("" + firstName + " " + lastName + " is " + age + " years old", firstName, lastName, age);
-                    Console.WriteLine("{0} {1} is {2} years old", firstName, lastName, age); //Composite Format
-
-                    string test = string.Concat("firstName, lastName is age years old.");
-                    Console.WriteLine(test);
+                    Console.Write("Number ? ");
+                    numbers[i] = Convert.ToInt32(Console.ReadLine());
                 }
 
+                foreach (int n in numbers)
+                    Console.WriteLine(n);
+            }
+
+            {
+                int[] numbers = new int[10];
+
+                for (int i = 0; i < numbers.Length; i++)
                 {
-                    Console.Write("Please enter a message : ");
-                    string message = Console.ReadLine();
-
-                    for (int i = message.Length; i <= 0; i--)
-                    {
-                        Console.Write(message[i]);
-                        Thread.Sleep(100);
-                    }
-
+                    Console.Write($"Enter a number ({i + 1}/10): ");
+                    numbers[i] = Convert.ToInt32(Console.ReadLine());
                 }
 
+                foreach (int num in numbers)
                 {
-                    Console.Write("Please give a message : ");
-                    string message = Console.ReadLine();
-
-                    for (int i = message.Length - 1; i >= 0; i--)
-                    {
-                        Console.WriteLine($"The reverse for the user given message is" + message[i]);
-                    }
+                    if (num % 2 == 0)
+                        Console.WriteLine($"{num} is even.");
+                    else
+                        Console.WriteLine($"{num} is odd.");
                 }
+            }
 
+            {
+                List<int> numbers = new List<int> { 1, 2, 3 };
+
+                foreach (int n in numbers)
+                    Console.WriteLine($"The number is {n}.");
+            }
+
+            {
+                List<int> numbers = new List<int>();
+
+                for (int i = 0; i < 4; i++)
                 {
-                    int[] numbers = new int[3];
-
-                    Console.Write("Numbre One ? ");
-                    numbers[0] = Convert.ToInt32(Console.ReadLine());
-
-                    Console.Write("Numbre Two ? ");
-                    numbers[1] = Convert.ToInt32(Console.ReadLine());
-
-                    Console.Write("Numbre Three ? ");
-                    numbers[2] = Convert.ToInt32(Console.ReadLine());
-
-
-                    for (int i = 0; i < numbers.Length; i++)
-                    {
-                        Console.Write(numbers[i]);
-                    }
-
-                    {
-                        int[] numbers = new int[5];
-
-                        for (int i = 0; i < numbers.Length; i++)
-                        {
-                            Console.Write("Numbre ? ");
-                            numbers[i] = Convert.ToInt32(Console.ReadLine());
-                        }
-
-                        foreach( int n in numbers ){
-                            Console.WriteLine(n);
-                        }
-                    }
-
-                    {
-                        int[] numbers = new int[10];
-
-                        for (int i = 0; i < numbers.Length; i++)
-                        {
-                            Console.WriteLine($"Enter a number: ");
-                            numbers[i] = Convert.ToInt32(Console.ReadLine());
-                        }
-
-                        foreach (int num in numbers)
-                        {
-                            Console.WriteLine($"The sorted array is {num}.");
-
-                            if(num % 2 == 0)
-                            {
-                                Console.WriteLine(num);
-                            }
-                            else
-                            {
-                                return;
-                            }
-                        }
-                    }
+                    Console.Write("Number ? ");
+                    numbers.Add(Convert.ToInt32(Console.ReadLine()));
                 }
+
+                foreach (int n in numbers)
+                    Console.WriteLine($"The number is {n}.");
+            }
+
+            {
+                Dictionary<int, string> user = new()
+                {
+                    [191] = "Sam",
+                    [192] = "John",
+                    [193] = "Von",
+                };
+
+                foreach (KeyValuePair<int, string> u in user)
+                    Console.WriteLine($"User ID - {u.Key} has been registered under the name {u.Value}");
+            }
+
+            {
+                Dictionary<string, string> course = new()
+                {
+                    ["Mathematics"] = "John",
+                    ["AI"] = "Sam",
+                    ["Java"] = "Tim",
+                    ["DotNet"] = "Simon",
+                };
+
+                if (course.TryGetValue("AI", out string teacher))
+                    Console.WriteLine($"AI course has been assigned to {teacher}.");
+            }
+
+            {
+                List<int> oddNumber = new List<int>();
+                List<int> evenNumber = new List<int>();
+
+                for (int i = 0; i <= 3; i++)
+                {
+                    Console.Write($"Number {i + 1} is ");
+                    string num = Console.ReadLine();
+                    int accNum = Convert.ToInt32(num);
+
+                    if (accNum % 2 == 0)
+                        evenNumber.Add(accNum);
+                    else
+                        oddNumber.Add(accNum);
+                }
+
+                Console.WriteLine("The odd numbers are:");
+                Console.WriteLine(string.Join(", ", oddNumber));
+
+                Console.WriteLine("The even numbers are:");
+                Console.WriteLine(string.Join(", ", evenNumber));
             }
         }
     }
