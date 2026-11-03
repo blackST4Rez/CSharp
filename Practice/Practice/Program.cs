@@ -241,6 +241,37 @@ namespace Practice
                 Console.WriteLine("The even numbers are:");
                 Console.WriteLine(string.Join(", ", evenNumber));
             }
+
+            {
+
+                {
+                    static void Message()
+                    {
+                        Console.WriteLine("Za WAAAA Ru DOO");
+                    }
+
+                    {
+                        Console.Write("Your stand please ? ");
+                        string stand = Console.ReadLine();
+
+                        Console.WriteLine(stand);
+                        Message();
+                    }
+                }
+                {
+                    Console.Write("Name ? ");
+                    string person = Console.ReadLine();
+
+                    Message(person);
+
+                    static void Message(string user)
+                    {
+                        Console.WriteLine($"Welcome, {user}");
+                    }
+
+                }
+            }
+
         }
     }
 }
