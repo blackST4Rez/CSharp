@@ -2,6 +2,24 @@
 using System.Collections.Generic;
 using System.Threading;
 
+class BankAccount
+{
+    public string Owner { get; set; }
+
+    public decimal Balance { get; private set; }
+
+    public BankAccount(string owner, decimal initialBalance)
+    {
+        Owner = owner;
+        Balance = initialBalance;
+    }
+
+    public void Deposit(decimal amount)
+    {
+        Balance += amount;
+    }
+}
+
 namespace Practice
 {
     internal class Program
@@ -268,6 +286,16 @@ namespace Practice
                     {
                         Console.WriteLine($"Welcome, {user}");
                     }
+
+                }
+                {
+                    BankAccount account = new BankAccount("Raka", 1000);
+
+                    Console.WriteLine(account.Balance);
+
+                    account.Deposit(500);
+
+                    Console.WriteLine(account.Balance);
 
                 }
             }
