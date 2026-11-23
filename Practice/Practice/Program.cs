@@ -2,6 +2,49 @@
 using System.Collections.Generic;
 using System.Threading;
 
+class Sahakari
+{
+    public decimal balance { get; private set; }
+
+    public string Deposit(decimal amount)
+    {
+        if (amount <= 1000)
+        {
+            return "Deposit amount must be more than NPR.1000.";
+        }
+        else if (amount >= 500000)
+        {
+            return "Deposit amount must be less than NPR.500000.";
+        }
+        else
+        {
+            balance += amount;
+            return "Amount has been deposited successfully.";
+        }
+    }
+
+    public string Withdraw(decimal amount)
+    {
+        if (amount < 500)
+        {
+            return "Amount less than NPR.500 cannot be withdrawn.";
+        }
+        else if (amount > 500000)
+        {
+            return "Amount more than NPR.500000 cannot be withdrawn.";
+        }
+        else if (amount > balance)
+        {
+            return "Insufficient balance.";
+        }
+        else
+        {
+            balance -= amount;
+            return "Amount has been withdrawn successfully.";
+        }
+    }
+}
+
 class Person
 {
     private int age;
@@ -334,6 +377,31 @@ namespace Practice
 
                     Console.WriteLine(person.Age);
                 }
+            }
+            {
+                Sahakari Ram = new Sahakari();
+
+                Console.Write("Enter the amount you want to deposit : ");
+                decimal accAmount = Convert.ToDecimal(Console.ReadLine());
+
+                Console.WriteLine(Ram.Deposit(accAmount));
+
+                Console.WriteLine("Do you want to withdraw any amount ?");
+                Console.WriteLine("Type Y for YES and N for NO: ");
+                string accMsg = Console.ReadLine();
+
+                if (accMsg == "Y")
+                {
+                    Console.Write("Enter the amount you want to withdraw : ");
+                    decimal drawAmount = Convert.ToDecimal(Console.ReadLine());
+                    Console.WriteLine(Ram.Withdraw(drawAmount));
+                }
+                else
+                {
+                    return;
+                }
+
+                Console.WriteLine($"Balance: NPR.{Ram.balance}");
             }
 
         }
